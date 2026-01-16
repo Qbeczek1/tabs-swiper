@@ -25,3 +25,7 @@ npm-debug.log*
 # Build outputs
 dist/
 build/
+
+# Release archives
+*.zip
+*.tar.gz
