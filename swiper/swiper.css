@@ -248,6 +248,41 @@ body {
   z-index: 100;
 }
 
+.empty p {
+  margin-bottom: 20px;
+}
+
+.empty-footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.empty-message {
+  font-size: 18px;
+  margin-bottom: 15px;
+  opacity: 0.95;
+}
+
+.empty-message a {
+  color: #ffd93d;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.empty-message a:hover {
+  color: #ffed4e;
+  text-decoration: underline;
+}
+
+.empty-reminder {
+  font-size: 16px;
+  opacity: 0.85;
+  font-style: italic;
+  margin-top: 15px;
+}
+
 .loading p,
 .empty p {
   margin-top: 20px;
