@@ -225,11 +225,12 @@ async function closeTab() {
   
   await chrome.runtime.sendMessage({ action: 'closeTab', tabId: tab.id });
   
-  // Zwiększ licznik i sprawdź milestone
+  // Zwiększ licznik
   closedTabsCount++;
   updateStats();
   saveClosedTabsCount();
-  checkMilestone();
+  
+  // Sprawdź milestone po przetworzeniu następnej karty (currentIndex zostanie zaktualizowany w processNext)
 }
 
 // Zostaw zakładkę
@@ -302,7 +303,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Milestone'y i komunikaty
+// Milestone'y i komunikaty - powiązane z liczbą przeglądniętych zakładek
 const milestones = [
   { count: 10, message: 'Super Ci idzie! 🎉', emoji: '🎉' },
   { count: 25, message: 'Dobra robota! 🔥', emoji: '🔥' },
@@ -311,9 +312,9 @@ const milestones = [
   { count: 250, message: 'Mistrz porządkowania! 👑', emoji: '👑' }
 ];
 
-// Sprawdź czy osiągnięto milestone
+// Sprawdź czy osiągnięto milestone (na podstawie przeglądniętych zakładek)
 function checkMilestone() {
-  const milestone = milestones.find(m => m.count === closedTabsCount);
+  const milestone = milestones.find(m => m.count === currentIndex);
   
   if (milestone) {
     showCelebration(milestone.message, milestone.emoji);
