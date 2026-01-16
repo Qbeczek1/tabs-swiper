@@ -39,6 +39,44 @@ body {
 .counter {
   font-size: 16px;
   opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-label {
+  opacity: 0.8;
+}
+
+.stat-value {
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-closed {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.2);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.stat-kept {
+  color: #51cf66;
+  background: rgba(81, 207, 102, 0.2);
 }
 
 .cards-stack {
@@ -483,6 +521,126 @@ body {
 .confetti-20 {
   left: 50%;
   animation: confetti-fall 2s ease-out 0.1s forwards;
+  background: #ffd93d;
+}
+
+.confetti-21 {
+  left: 7%;
+  animation: confetti-fall 2s ease-out 0.6s forwards;
+  background: #667eea;
+}
+
+.confetti-22 {
+  left: 12%;
+  animation: confetti-fall 2s ease-out 0.3s forwards;
+  background: #764ba2;
+}
+
+.confetti-23 {
+  left: 17%;
+  animation: confetti-fall 2s ease-out 0.5s forwards;
+  background: #ff6b6b;
+}
+
+.confetti-24 {
+  left: 22%;
+  animation: confetti-fall 2s ease-out 0.2s forwards;
+  background: #51cf66;
+}
+
+.confetti-25 {
+  left: 27%;
+  animation: confetti-fall 2s ease-out 0.4s forwards;
+  background: #ffd93d;
+}
+
+.confetti-26 {
+  left: 32%;
+  animation: confetti-fall 2s ease-out 0.6s forwards;
+  background: #667eea;
+}
+
+.confetti-27 {
+  left: 37%;
+  animation: confetti-fall 2s ease-out 0.3s forwards;
+  background: #764ba2;
+}
+
+.confetti-28 {
+  left: 42%;
+  animation: confetti-fall 2s ease-out 0.5s forwards;
+  background: #ff6b6b;
+}
+
+.confetti-29 {
+  left: 47%;
+  animation: confetti-fall 2s ease-out 0.2s forwards;
+  background: #51cf66;
+}
+
+.confetti-30 {
+  left: 52%;
+  animation: confetti-fall 2s ease-out 0.4s forwards;
+  background: #ffd93d;
+}
+
+.confetti-31 {
+  left: 57%;
+  animation: confetti-fall 2s ease-out 0.6s forwards;
+  background: #667eea;
+}
+
+.confetti-32 {
+  left: 62%;
+  animation: confetti-fall 2s ease-out 0.3s forwards;
+  background: #764ba2;
+}
+
+.confetti-33 {
+  left: 67%;
+  animation: confetti-fall 2s ease-out 0.5s forwards;
+  background: #ff6b6b;
+}
+
+.confetti-34 {
+  left: 72%;
+  animation: confetti-fall 2s ease-out 0.2s forwards;
+  background: #51cf66;
+}
+
+.confetti-35 {
+  left: 77%;
+  animation: confetti-fall 2s ease-out 0.4s forwards;
+  background: #ffd93d;
+}
+
+.confetti-36 {
+  left: 82%;
+  animation: confetti-fall 2s ease-out 0.6s forwards;
+  background: #667eea;
+}
+
+.confetti-37 {
+  left: 87%;
+  animation: confetti-fall 2s ease-out 0.3s forwards;
+  background: #764ba2;
+}
+
+.confetti-38 {
+  left: 92%;
+  animation: confetti-fall 2s ease-out 0.5s forwards;
+  background: #ff6b6b;
+}
+
+.confetti-39 {
+  left: 97%;
+  animation: confetti-fall 2s ease-out 0.2s forwards;
+  background: #51cf66;
+}
+
+.confetti-40 {
+  left: 3%;
+  animation: confetti-fall 2s ease-out 0.4s forwards;
   background: #ffd93d;
 }
 

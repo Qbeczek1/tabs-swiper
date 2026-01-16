@@ -9,6 +9,7 @@ let currentX = 0;
 let currentY = 0;
 let currentCard = null;
 let closedTabsCount = 0; // Licznik zamkniętych zakładek
+let keptTabsCount = 0; // Licznik zostawionych zakładek
 
 const SWIPE_THRESHOLD = 100; // Minimalna odległość dla swipe
 const ROTATION_FACTOR = 0.1;
@@ -21,6 +22,8 @@ const btnClose = document.getElementById('btn-close');
 const btnKeep = document.getElementById('btn-keep');
 const currentIndexEl = document.getElementById('current-index');
 const totalTabsEl = document.getElementById('total-tabs');
+const closedCountEl = document.getElementById('closed-count');
+const keptCountEl = document.getElementById('kept-count');
 
 // Inicjalizacja
 async function init() {
@@ -224,6 +227,7 @@ async function closeTab() {
   
   // Zwiększ licznik i sprawdź milestone
   closedTabsCount++;
+  updateStats();
   saveClosedTabsCount();
   checkMilestone();
 }
@@ -241,6 +245,11 @@ async function keepTab() {
       processNext();
     }, 300);
   }
+  
+  // Zwiększ licznik zostawionych
+  keptTabsCount++;
+  updateStats();
+  saveKeptTabsCount();
 }
 
 // Przetwórz następną kartę
@@ -369,19 +378,43 @@ function showCelebration(message, emoji) {
   }, 3000);
 }
 
-// Inicjalizuj licznik z sessionStorage
-function initClosedTabsCount() {
-  const stored = sessionStorage.getItem('tabsSwiperClosedCount');
-  if (stored) {
-    closedTabsCount = parseInt(stored, 10);
-  } else {
-    closedTabsCount = 0;
+// Aktualizuj statystyki w UI
+function updateStats() {
+  if (closedCountEl) {
+    closedCountEl.textContent = closedTabsCount;
+  }
+  if (keptCountEl) {
+    keptCountEl.textContent = keptTabsCount;
   }
 }
 
-// Zapisz licznik do sessionStorage
+// Inicjalizuj liczniki z sessionStorage
+function initClosedTabsCount() {
+  const storedClosed = sessionStorage.getItem('tabsSwiperClosedCount');
+  if (storedClosed) {
+    closedTabsCount = parseInt(storedClosed, 10);
+  } else {
+    closedTabsCount = 0;
+  }
+  
+  const storedKept = sessionStorage.getItem('tabsSwiperKeptCount');
+  if (storedKept) {
+    keptTabsCount = parseInt(storedKept, 10);
+  } else {
+    keptTabsCount = 0;
+  }
+  
+  updateStats();
+}
+
+// Zapisz licznik zamkniętych do sessionStorage
 function saveClosedTabsCount() {
   sessionStorage.setItem('tabsSwiperClosedCount', closedTabsCount.toString());
+}
+
+// Zapisz licznik zostawionych do sessionStorage
+function saveKeptTabsCount() {
+  sessionStorage.setItem('tabsSwiperKeptCount', keptTabsCount.toString());
 }
 
 // Start
