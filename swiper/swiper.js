@@ -331,9 +331,6 @@ function showCelebration(message, emoji) {
   let escapeHandler = null;
   const closeCelebration = () => {
     overlay.style.display = 'none';
-    if (typeof confetti !== 'undefined' && confetti.reset) {
-      confetti.reset();
-    }
     // Usuń event listenery
     if (escapeHandler) {
       document.removeEventListener('keydown', escapeHandler);
@@ -364,36 +361,7 @@ function showCelebration(message, emoji) {
   };
   document.addEventListener('keydown', escapeHandler);
   
-  // Uruchom animację confetti jeśli dostępne
-  if (typeof confetti !== 'undefined') {
-    const duration = 3000;
-    const end = Date.now() + duration;
-    
-    const colors = ['#667eea', '#764ba2', '#ff6b6b', '#51cf66', '#ffd93d'];
-    
-    (function frame() {
-      confetti({
-        particleCount: 5,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors
-      });
-      confetti({
-        particleCount: 5,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors
-      });
-      
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    }());
-  } else {
-    console.warn('Confetti library not loaded');
-  }
+  // Animacja CSS jest automatyczna - nie trzeba nic robić
   
   // Auto-ukryj po 3 sekundach
   setTimeout(() => {
