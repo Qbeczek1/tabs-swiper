@@ -52,9 +52,7 @@ tabs-swiper/
 │   ├── swiper.html        # Główny UI
 │   ├── swiper.css         # Style + animacje
 │   └── swiper.js          # Logika UI + gesty
-├── icons/                 # Ikony rozszerzenia
-└── docs/
-    └── README.md          # Szczegółowa dokumentacja
+└── icons/                 # Ikony rozszerzenia
 ```
 
 ## ⚡ Performance
