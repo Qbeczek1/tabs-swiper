@@ -258,6 +258,9 @@ async function processNext() {
   currentIndex++;
   currentIndexEl.textContent = currentIndex;
   
+  // Sprawdź milestone po przeglądnięciu zakładki
+  checkMilestone();
+  
   // Przesuń karty w górę
   const cards = document.querySelectorAll('.card');
   cards.forEach((card, index) => {
