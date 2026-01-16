@@ -293,5 +293,129 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Milestone'y i komunikaty
+const milestones = [
+  { count: 10, message: 'Super Ci idzie! 🎉', emoji: '🎉' },
+  { count: 25, message: 'Dobra robota! 🔥', emoji: '🔥' },
+  { count: 50, message: 'Czyść dalej! 💪', emoji: '💪' },
+  { count: 100, message: 'Niesamowite! 🚀', emoji: '🚀' },
+  { count: 250, message: 'Mistrz porządkowania! 👑', emoji: '👑' }
+];
+
+// Sprawdź czy osiągnięto milestone
+function checkMilestone() {
+  const milestone = milestones.find(m => m.count === closedTabsCount);
+  
+  if (milestone) {
+    showCelebration(milestone.message, milestone.emoji);
+  }
+}
+
+// Pokaż animację fajerwerków
+function showCelebration(message, emoji) {
+  const overlay = document.getElementById('celebration-overlay');
+  const messageEl = document.getElementById('celebration-message');
+  
+  if (!overlay || !messageEl) {
+    console.error('Celebration elements not found');
+    return;
+  }
+  
+  // Ustaw komunikat
+  messageEl.textContent = message;
+  
+  // Pokaż overlay
+  overlay.style.display = 'flex';
+  
+  // Funkcja zamykania
+  let escapeHandler = null;
+  const closeCelebration = () => {
+    overlay.style.display = 'none';
+    if (typeof confetti !== 'undefined' && confetti.reset) {
+      confetti.reset();
+    }
+    // Usuń event listenery
+    if (escapeHandler) {
+      document.removeEventListener('keydown', escapeHandler);
+    }
+  };
+  
+  // Zamknij po kliknięciu na overlay (tylko tło, nie modal)
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closeCelebration();
+    }
+  });
+  
+  // Przycisk zamknij
+  const closeBtn = document.getElementById('celebration-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeCelebration();
+    });
+  }
+  
+  // Zamknij po Escape
+  escapeHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeCelebration();
+    }
+  };
+  document.addEventListener('keydown', escapeHandler);
+  
+  // Uruchom animację confetti jeśli dostępne
+  if (typeof confetti !== 'undefined') {
+    const duration = 3000;
+    const end = Date.now() + duration;
+    
+    const colors = ['#667eea', '#764ba2', '#ff6b6b', '#51cf66', '#ffd93d'];
+    
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors
+      });
+      
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
+  } else {
+    console.warn('Confetti library not loaded');
+  }
+  
+  // Auto-ukryj po 3 sekundach
+  setTimeout(() => {
+    closeCelebration();
+  }, 3000);
+}
+
+// Inicjalizuj licznik z sessionStorage
+function initClosedTabsCount() {
+  const stored = sessionStorage.getItem('tabsSwiperClosedCount');
+  if (stored) {
+    closedTabsCount = parseInt(stored, 10);
+  } else {
+    closedTabsCount = 0;
+  }
+}
+
+// Zapisz licznik do sessionStorage
+function saveClosedTabsCount() {
+  sessionStorage.setItem('tabsSwiperClosedCount', closedTabsCount.toString());
+}
+
 // Start
 init();
+initClosedTabsCount();
