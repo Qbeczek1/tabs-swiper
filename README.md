@@ -21,8 +21,18 @@ Chrome extension for swiping through tabs like Tinder - swipe left to close, swi
 
 ## 📦 Installation
 
-1. Otwórz Chrome i przejdź do `chrome://extensions/`
+### Krok 1: Pobierz repozytorium
 
+```bash
+git clone https://github.com/Qbeczek1/tabs-swiper.git
+cd tabs-swiper
+```
+
+Lub pobierz jako [ZIP](https://github.com/Qbeczek1/tabs-swiper/archive/refs/heads/master.zip) i rozpakuj.
+
+### Krok 2: Załaduj rozszerzenie w Chrome
+
+1. Otwórz Chrome i przejdź do `chrome://extensions/`
 2. Włącz "Tryb deweloperski" (Developer mode) w prawym górnym rogu
 3. Kliknij "Załaduj rozpakowane" (Load unpacked)
 4. Wybierz katalog `tabs-swiper`
