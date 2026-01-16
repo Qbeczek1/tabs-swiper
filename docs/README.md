@@ -13,35 +13,11 @@ Chrome extension for swiping through tabs like Tinder - swipe left to close, swi
 ## Wymagania
 
 - Google Chrome (najnowsza wersja)
-- Ikony PNG (16x16, 48x48, 128x128) - można wygenerować automatycznie
 
 ## Instalacja
 
-### Krok 1: Przygotuj ikony
-
-Rozszerzenie wymaga ikon PNG w rozmiarach 16x16, 48x48 i 128x128 pikseli.
-
-**Opcja A - Użyj generate-icons.html:**
-
-1. Otwórz `generate-icons.html` w przeglądarce
-2. Ikony PNG zostaną automatycznie pobrane
-
-**Opcja B - Konwersja SVG:**
-
-1. Użyj narzędzia online (np. convertio.co) do konwersji SVG → PNG
-2. Przekonwertuj `icons/icon16.svg`, `icon48.svg`, `icon128.svg`
-3. Zapisz jako `icon16.png`, `icon48.png`, `icon128.png` w katalogu `icons/`
-
-**Opcja C - Node.js z canvas:**
-
-```bash
-npm install canvas
-node generate-icons.js
-```
-
-### Krok 2: Załaduj rozszerzenie
-
 1. Otwórz Chrome i przejdź do `chrome://extensions/`
+
 2. Włącz "Tryb deweloperski" (Developer mode) w prawym górnym rogu
 3. Kliknij "Załaduj rozpakowane" (Load unpacked)
 4. Wybierz katalog `tabs-swiper`
