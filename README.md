@@ -53,8 +53,6 @@ tabs-swiper/
 │   ├── swiper.css         # Style + animacje
 │   └── swiper.js          # Logika UI + gesty
 ├── icons/                 # Ikony rozszerzenia
-├── generate-icons.html    # Generator ikon PNG
-├── generate-icons.js      # Generator ikon SVG
 └── docs/
     └── README.md          # Szczegółowa dokumentacja
 ```
