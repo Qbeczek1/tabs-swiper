@@ -7,7 +7,7 @@
 
 Chrome extension for swiping through tabs like Tinder - swipe left to close, swipe right to keep. Idealne do szybkiego porządkowania setek otwartych zakładek.
 
-![Tabs Swiper Screenshot](screenshot.png)
+![Tabs Swiper Screenshot](screenshot-tabs-swiper.jpg)
 
 ## 🎯 Features
 
