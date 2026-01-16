@@ -75,7 +75,3 @@ MIT
 ## 👤 Author
 
 Stworzone z ❤️ dla szybkiego porządkowania zakładek
-
----
-
-📖 [Pełna dokumentacja](docs/README.md)
