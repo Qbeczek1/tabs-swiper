@@ -10,6 +10,10 @@ Chrome extension for swiping through tabs like Tinder - swipe left to close, swi
 **Wersja:** 1.0.0  
 **Manifest:** V3
 
+## Screenshot
+
+![Tabs Swiper Screenshot](../screenshot.png)
+
 ## Wymagania
 
 - Google Chrome (najnowsza wersja)
