@@ -63,13 +63,13 @@ body {
 }
 
 .stat-viewed {
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.2);
+  color: white;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .stat-total {
-  color: #764ba2;
-  background: rgba(118, 75, 162, 0.2);
+  color: white;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .stat-closed {
