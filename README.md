@@ -1,6 +1,6 @@
 # Tabs Swiper
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Qbeczek1/tabs-swiper/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/Qbeczek1/tabs-swiper/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow.svg)](https://chrome.google.com/webstore)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-orange.svg)](https://developer.chrome.com/docs/extensions/mv3/)

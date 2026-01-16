@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Tabs Swiper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Swipe through your Chrome tabs like Tinder - close or keep them",
   "permissions": [
     "tabs",
