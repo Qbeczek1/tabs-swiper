@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.cards-stack {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  max-width: 450px;
+  height: 70vh;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  user-select: none;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card.dragging {
+  transition: none;
+}
+
+.card.swipe-left {
+  transform: translateX(-100vw) rotate(-30deg);
+  opacity: 0;
+}
+
+.card.swipe-right {
+  transform: translateX(100vw) rotate(30deg);
+  opacity: 0;
+}
+
+.card-stack-1 {
+  z-index: 3;
+  transform: scale(1) translateY(0);
+}
+
+.card-stack-2 {
+  z-index: 2;
+  transform: scale(0.95) translateY(10px);
+  opacity: 0.8;
+}
+
+.card-stack-3 {
+  z-index: 1;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0.6;
+}
+
+.card-image {
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 48px;
+}
+
+.card-info {
+  padding: 20px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card-url {
+  font-size: 14px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 20px;
+  z-index: 10;
+}
+
+.btn-close,
+.btn-keep {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close {
+  background: #ff6b6b;
+  color: white;
+}
+
+.btn-keep {
+  background: #51cf66;
+  color: white;
+}
+
+.btn-close:hover,
+.btn-keep:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-close:active,
+.btn-keep:active {
+  transform: scale(0.95);
+}
+
+.loading,
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 100;
+}
+
+.loading p,
+.empty p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.swipe-indicator {
+  position: absolute;
+  top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.swipe-indicator.left {
+  left: 20px;
+  color: #ff6b6b;
+}
+
+.swipe-indicator.right {
+  right: 20px;
+  color: #51cf66;
+}
+
+.swipe-indicator.show {
+  opacity: 0.8;
+}

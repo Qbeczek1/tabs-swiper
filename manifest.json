@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Tabs Swiper",
+  "version": "1.0.0",
+  "description": "Swipe through your Chrome tabs like Tinder - close or keep them",
+  "permissions": [
+    "tabs",
+    "windows"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Tabs Swiper"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Swiper</title>
+  <link rel="stylesheet" href="swiper.css">
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="header">
+      <h1>Tabs Swiper</h1>
+      <div class="counter">
+        <span id="current-index">0</span> / <span id="total-tabs">0</span>
+      </div>
+    </div>
+    
+    <div class="cards-stack" id="cards-stack">
+      <!-- Karty będą dodawane dynamicznie -->
+    </div>
+    
+    <div class="controls">
+      <button class="btn-close" id="btn-close" title="Zamknij (←)">
+        <span>✕</span>
+      </button>
+      <button class="btn-keep" id="btn-keep" title="Zostaw (→)">
+        <span>♥</span>
+      </button>
+    </div>
+    
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Ładowanie zakładek...</p>
+    </div>
+    
+    <div class="empty" id="empty" style="display: none;">
+      <p>🎉 Wszystkie zakładki przejrzane!</p>
+      <p>Możesz zamknąć to okno.</p>
+    </div>
+  </div>
+  
+  <script src="swiper.js"></script>
+</body>
+</html>
