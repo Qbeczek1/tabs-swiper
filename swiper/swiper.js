@@ -8,6 +8,7 @@ let dragStartY = 0;
 let currentX = 0;
 let currentY = 0;
 let currentCard = null;
+let closedTabsCount = 0; // Licznik zamkniętych zakładek
 
 const SWIPE_THRESHOLD = 100; // Minimalna odległość dla swipe
 const ROTATION_FACTOR = 0.1;
@@ -220,6 +221,11 @@ async function closeTab() {
   }
   
   await chrome.runtime.sendMessage({ action: 'closeTab', tabId: tab.id });
+  
+  // Zwiększ licznik i sprawdź milestone
+  closedTabsCount++;
+  saveClosedTabsCount();
+  checkMilestone();
 }
 
 // Zostaw zakładkę
