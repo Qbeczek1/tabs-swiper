@@ -36,18 +36,13 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.counter {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 10px;
-}
-
 .stats {
   display: flex;
   gap: 20px;
   justify-content: center;
   font-size: 14px;
   opacity: 0.9;
+  flex-wrap: wrap;
 }
 
 .stat-item {
@@ -65,6 +60,16 @@ body {
   padding: 2px 8px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-viewed {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.2);
+}
+
+.stat-total {
+  color: #764ba2;
+  background: rgba(118, 75, 162, 0.2);
 }
 
 .stat-closed {
