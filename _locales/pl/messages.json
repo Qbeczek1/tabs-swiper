@@ -1,0 +1,22 @@
+{
+  "extName": { "message": "Tabs Swiper" },
+  "extDescription": { "message": "Przeglądaj otwarte karty jak w Tinderze: w lewo zamykasz, w prawo zostawiasz. Posprzątaj setki kart w kilka minut." },
+  "statViewed": { "message": "Przejrzane:" },
+  "statClosed": { "message": "Zamknięte:" },
+  "statKept": { "message": "Zostawione:" },
+  "btnCloseTitle": { "message": "Zamknij (←)" },
+  "btnKeepTitle": { "message": "Zostaw (→)" },
+  "loading": { "message": "Ładowanie zakładek..." },
+  "loadError": { "message": "Nie udało się pobrać zakładek. Odśwież stronę (F5)." },
+  "untitled": { "message": "Bez tytułu" },
+  "emptyDone": { "message": "🎉 Wszystkie zakładki przejrzane!" },
+  "emptyCloseWindow": { "message": "Możesz zamknąć to okno." },
+  "emptyStarPrefix": { "message": "Jeśli podoba Ci się ta wtyczka, daj ⭐ na" },
+  "emptyReminder": { "message": "💡 Pamiętaj o regularnym przeglądaniu zakładek - Twój RAM będzie wdzięczny!" },
+  "celebrationCloseTitle": { "message": "Zamknij (Escape)" },
+  "milestone10": { "message": "Super Ci idzie! 🎉" },
+  "milestone25": { "message": "Dobra robota! 🔥" },
+  "milestone50": { "message": "Czyść dalej! 💪" },
+  "milestone100": { "message": "Niesamowite! 🚀" },
+  "milestone250": { "message": "Mistrz porządkowania! 👑" }
+}

@@ -35,6 +35,21 @@ const celebrationOverlay = document.getElementById('celebration-overlay');
 const celebrationMessageEl = document.getElementById('celebration-message');
 const celebrationCloseBtn = document.getElementById('celebration-close');
 
+// Tłumaczenia z _locales/<język>/messages.json - Chrome sam wybiera język przeglądarki
+function t(key) {
+  return chrome.i18n.getMessage(key) || key;
+}
+
+function applyTranslations() {
+  document.documentElement.lang = chrome.i18n.getUILanguage();
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    el.title = t(el.dataset.i18nTitle);
+  });
+}
+
 // Pobierz wszystkie zakładki ze wszystkich okien (pomijając swipera i strony przeglądarki)
 async function getAllTabs() {
   const windows = await chrome.windows.getAll({ populate: true });
@@ -65,7 +80,7 @@ async function init() {
   } catch (error) {
     console.error('Error loading tabs:', error);
     loadingEl.querySelector('.spinner')?.remove();
-    loadingEl.querySelector('p').textContent = 'Nie udało się pobrać zakładek. Odśwież stronę (F5).';
+    loadingEl.querySelector('p').textContent = t('loadError');
     return;
   }
 
@@ -122,7 +137,7 @@ function createCard(tab, stackIndex) {
 
   const titleDiv = document.createElement('div');
   titleDiv.className = 'card-title';
-  titleDiv.textContent = tab.title || 'Bez tytułu';
+  titleDiv.textContent = tab.title || t('untitled');
 
   const urlDiv = document.createElement('div');
   urlDiv.className = 'card-url';
@@ -340,19 +355,12 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Milestone'y i komunikaty - powiązane z liczbą przeglądniętych zakładek
-const milestones = [
-  { count: 10, message: 'Super Ci idzie! 🎉' },
-  { count: 25, message: 'Dobra robota! 🔥' },
-  { count: 50, message: 'Czyść dalej! 💪' },
-  { count: 100, message: 'Niesamowite! 🚀' },
-  { count: 250, message: 'Mistrz porządkowania! 👑' }
-];
+const milestones = [10, 25, 50, 100, 250];
 
 // Sprawdź czy osiągnięto milestone (na podstawie przeglądniętych zakładek)
 function checkMilestone() {
-  const milestone = milestones.find(m => m.count === currentIndex);
-  if (milestone) {
-    showCelebration(milestone.message);
+  if (milestones.includes(currentIndex)) {
+    showCelebration(t(`milestone${currentIndex}`));
   }
 }
 
@@ -409,5 +417,6 @@ function saveKeptTabsCount() {
 }
 
 // Start
+applyTranslations();
 initCounters();
 init();

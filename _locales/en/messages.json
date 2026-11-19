@@ -1,0 +1,22 @@
+{
+  "extName": { "message": "Tabs Swiper" },
+  "extDescription": { "message": "Swipe through your open tabs like Tinder: left to close, right to keep. Clean up hundreds of tabs in minutes." },
+  "statViewed": { "message": "Reviewed:" },
+  "statClosed": { "message": "Closed:" },
+  "statKept": { "message": "Kept:" },
+  "btnCloseTitle": { "message": "Close (←)" },
+  "btnKeepTitle": { "message": "Keep (→)" },
+  "loading": { "message": "Loading tabs..." },
+  "loadError": { "message": "Could not load your tabs. Refresh the page (F5)." },
+  "untitled": { "message": "Untitled" },
+  "emptyDone": { "message": "🎉 All tabs reviewed!" },
+  "emptyCloseWindow": { "message": "You can close this tab now." },
+  "emptyStarPrefix": { "message": "Like this extension? Give it a ⭐ on" },
+  "emptyReminder": { "message": "💡 Review your tabs regularly - your RAM will thank you!" },
+  "celebrationCloseTitle": { "message": "Close (Escape)" },
+  "milestone10": { "message": "You're doing great! 🎉" },
+  "milestone25": { "message": "Nice work! 🔥" },
+  "milestone50": { "message": "Keep cleaning! 💪" },
+  "milestone100": { "message": "Amazing! 🚀" },
+  "milestone250": { "message": "Tab-tidying master! 👑" }
+}

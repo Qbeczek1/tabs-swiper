@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Tabs Swiper",
+  "name": "__MSG_extName__",
   "version": "1.1.1",
-  "description": "Swipe through your Chrome tabs like Tinder - close or keep them",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "permissions": [
     "tabs"
   ],
@@ -12,7 +13,7 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
-    "default_title": "Tabs Swiper"
+    "default_title": "__MSG_extName__"
   },
   "background": {
     "service_worker": "background.js"

@@ -18,6 +18,7 @@ Chrome extension for swiping through tabs like Tinder - swipe left to close, swi
 - ✅ Obsługa klawiatury (strzałki, Escape)
 - ✅ Animacje w stylu Tinder
 - ✅ Efekt 3D - widać kolejne karty pod spodem
+- ✅ Interfejs po angielsku i polsku (wybierany automatycznie wg języka przeglądarki)
 
 ## 📦 Installation
 
@@ -57,6 +58,7 @@ Lub pobierz jako [ZIP](https://github.com/Qbeczek1/tabs-swiper/archive/refs/head
 ```
 tabs-swiper/
 ├── manifest.json          # Konfiguracja rozszerzenia
+├── _locales/               # Tłumaczenia: en (domyślny), pl
 ├── background.js          # Service worker - otwiera swipera / przełącza na otwarty
 ├── swiper/
 │   ├── swiper.html        # Główny UI
@@ -73,6 +75,10 @@ Rozszerzenie zostało zaprojektowane z myślą o wydajności:
 - Minimalne użycie pamięci
 - Szybkie przeglądanie setek zakładek
 - Lazy loading - tylko widoczne karty są renderowane
+
+## 🌍 Tłumaczenia
+
+Teksty interfejsu są w `_locales/<język>/messages.json`. Nowy język = nowy folder z kopią `en/messages.json` i przetłumaczonymi wartościami `message`. Chrome sam wybiera język przeglądarki, a gdy go nie ma, używa angielskiego.
 
 ## 📝 License
 
