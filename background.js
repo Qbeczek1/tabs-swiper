@@ -1,66 +1,19 @@
 // Service Worker dla Tabs Swiper
-let swiperTabId = null;
+// Tylko obsługa kliknięcia ikony. Logika zakładek żyje w swiper.js,
+// bo service worker w MV3 jest usypiany i nie może trzymać stanu w zmiennych.
 
-// Otwórz Swiper UI po kliknięciu ikony
-chrome.action.onClicked.addListener(async (tab) => {
-  const swiperUrl = chrome.runtime.getURL('swiper/swiper.html');
-  const swiperTab = await chrome.tabs.create({ url: swiperUrl });
-  swiperTabId = swiperTab.id;
-});
+const SWIPER_URL = chrome.runtime.getURL('swiper/swiper.html');
 
-// Pobierz wszystkie zakładki ze wszystkich okien (pomijając swipera)
-async function getAllTabs() {
-  const windows = await chrome.windows.getAll({ populate: true });
-  const allTabs = [];
+// Otwórz Swiper UI po kliknięciu ikony - albo przełącz na już otwarty
+chrome.action.onClicked.addListener(async () => {
+  const existing = await chrome.tabs.query({ url: SWIPER_URL });
 
-  for (const window of windows) {
-    for (const tab of window.tabs || []) {
-      // Pomijamy kartę swipera i karty chrome://
-      if (tab.id !== swiperTabId && !tab.url?.startsWith('chrome://')) {
-        allTabs.push({
-          id: tab.id,
-          url: tab.url,
-          title: tab.title,
-          favIconUrl: tab.favIconUrl,
-          windowId: tab.windowId
-        });
-      }
-    }
+  if (existing.length > 0) {
+    const tab = existing[0];
+    await chrome.tabs.update(tab.id, { active: true });
+    await chrome.windows.update(tab.windowId, { focused: true });
+    return;
   }
 
-  return allTabs;
-}
-
-// Zamknij zakładkę
-async function closeTab(tabId) {
-  try {
-    await chrome.tabs.remove(tabId);
-    return true;
-  } catch (error) {
-    console.error('Error closing tab:', error);
-    return false;
-  }
-}
-
-// Obsługa wiadomości z UI
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'getAllTabs') {
-    getAllTabs().then(tabs => {
-      sendResponse({ success: true, tabs });
-    });
-    return true; // Async response
-  }
-
-  if (request.action === 'closeTab') {
-    closeTab(request.tabId).then(success => {
-      sendResponse({ success });
-    });
-    return true;
-  }
-
-  if (request.action === 'setSwiperTabId') {
-    swiperTabId = request.tabId;
-    sendResponse({ success: true });
-    return false;
-  }
+  await chrome.tabs.create({ url: SWIPER_URL });
 });
