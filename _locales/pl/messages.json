@@ -1,5 +1,6 @@
 {
-  "extName": { "message": "Tabs Swiper" },
+  "extName": { "message": "Tabs Swiper: zamykaj karty przesunięciem" },
+  "actionTitle": { "message": "Tabs Swiper" },
   "extDescription": { "message": "Przeglądaj otwarte karty jak w Tinderze: w lewo zamykasz, w prawo zostawiasz. Posprzątaj setki kart w kilka minut." },
   "statViewed": { "message": "Przejrzane:" },
   "statClosed": { "message": "Zamknięte:" },

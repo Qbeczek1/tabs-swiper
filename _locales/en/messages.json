@@ -1,5 +1,6 @@
 {
-  "extName": { "message": "Tabs Swiper" },
+  "extName": { "message": "Tabs Swiper: Swipe to Close Tabs" },
+  "actionTitle": { "message": "Tabs Swiper" },
   "extDescription": { "message": "Swipe through your open tabs like Tinder: left to close, right to keep. Clean up hundreds of tabs in minutes." },
   "statViewed": { "message": "Reviewed:" },
   "statClosed": { "message": "Closed:" },
