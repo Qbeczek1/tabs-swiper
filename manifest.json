@@ -4,8 +4,7 @@
   "version": "1.1.0",
   "description": "Swipe through your Chrome tabs like Tinder - close or keep them",
   "permissions": [
-    "tabs",
-    "windows"
+    "tabs"
   ],
   "action": {
     "default_icon": {
