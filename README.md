@@ -1,6 +1,6 @@
 # Tabs Swiper
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/Qbeczek1/tabs-swiper/releases)
+[![Version](https://img.shields.io/badge/version-1.1.1-blue.svg)](https://github.com/Qbeczek1/tabs-swiper/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow.svg)](https://chrome.google.com/webstore)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-orange.svg)](https://developer.chrome.com/docs/extensions/mv3/)
@@ -50,18 +50,18 @@ Lub pobierz jako [ZIP](https://github.com/Qbeczek1/tabs-swiper/archive/refs/head
 
 - **Manifest V3** - najnowszy standard rozszerzeń Chrome
 - **Vanilla JavaScript** - bez frameworków, lekki i szybki
-- **Chrome APIs:** `tabs`, `windows`
+- **Chrome APIs:** `tabs`, `windows` (jedyne wymagane uprawnienie: `tabs`)
 
 ## 📁 Project Structure
 
 ```
 tabs-swiper/
 ├── manifest.json          # Konfiguracja rozszerzenia
-├── background.js          # Service worker - logika zakładek
+├── background.js          # Service worker - otwiera swipera / przełącza na otwarty
 ├── swiper/
 │   ├── swiper.html        # Główny UI
 │   ├── swiper.css         # Style + animacje
-│   └── swiper.js          # Logika UI + gesty
+│   └── swiper.js          # Logika zakładek, UI + gesty
 └── icons/                 # Ikony rozszerzenia
 ```
 
