@@ -1,0 +1,26 @@
+Too many tabs open? Tabs Swiper turns cleaning them up into a quick, almost fun routine.
+
+Click the icon and your open tabs show up one by one as cards, with title, address and site icon. Swipe left to close a tab, swipe right to keep it. Tinder-style, but for your browser tabs.
+
+HOW IT WORKS
+- Click the Tabs Swiper icon in the toolbar
+- Every open tab from all your Chrome windows appears as a card
+- Swipe left, press the left arrow key or click ✕ to close the tab
+- Swipe right, press the right arrow key or click ♥ to keep it
+- Counters show how many tabs you have reviewed, closed and kept
+
+WHY IT HELPS
+Closing tabs in the tab strip is tedious: titles are cut off, it is easy to close the wrong one, and you keep putting it off. Tabs Swiper shows one tab at a time with its full title and URL, so each decision takes a second. Fewer open tabs means less memory used and a faster browser.
+
+FEATURES
+- Reviews tabs from all Chrome windows at once
+- Mouse drag, touch, buttons and keyboard (left/right arrows, Esc)
+- Lightweight: no screenshots and no page reloads, only title, URL and icon
+- Small celebrations at 10, 25, 50, 100 and 250 reviewed tabs
+- Available in English and Polish (follows your browser language)
+
+PRIVACY
+Tabs Swiper does not collect, store or send any data. No account, no analytics, no tracking. It needs only the "tabs" permission to read the titles and addresses of your open tabs and to close the ones you swipe away. Everything happens locally in your browser.
+
+OPEN SOURCE
+Free and open source under the MIT license: https://github.com/Qbeczek1/tabs-swiper
