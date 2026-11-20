@@ -64,7 +64,9 @@ tabs-swiper/
 │   ├── swiper.html        # Główny UI
 │   ├── swiper.css         # Style + animacje
 │   └── swiper.js          # Logika zakładek, UI + gesty
-└── icons/                 # Ikony rozszerzenia
+├── icons/                 # Ikony rozszerzenia
+├── scripts/build_zip.py   # Buduje paczkę do Chrome Web Store
+└── store/                 # Opisy do sklepu (nie trafiają do paczki)
 ```
 
 ## ⚡ Performance
@@ -79,6 +81,29 @@ Rozszerzenie zostało zaprojektowane z myślą o wydajności:
 ## 🌍 Tłumaczenia
 
 Teksty interfejsu są w `_locales/<język>/messages.json`. Nowy język = nowy folder z kopią `en/messages.json` i przetłumaczonymi wartościami `message`. Chrome sam wybiera język przeglądarki, a gdy go nie ma, używa angielskiego.
+
+## 🚢 Release
+
+Przykład dla wersji `1.3.0`; podmień numer.
+
+1. **Wersja:** podbij `version` w `manifest.json` i odznakę wersji na górze tego README. Numer musi być wyższy niż opublikowany w sklepie.
+2. **Commit i push:** najpierw `git fetch` + `git status`, przy zaległościach `git pull --ff-only`, potem `git push`.
+3. **Paczka:** z roota repo:
+   ```bash
+   python scripts/build_zip.py
+   ```
+   Powstaje `tabs-swiper-1.3.0.zip` (ignorowany przez git). Nie pakuj ręcznie: `tar` z Git Basha robi zwykły tar zamiast ZIP-a, a `Compress-Archive` w PowerShell 5.1 potrafi zapisać ścieżki z backslashami, przez co sklep odrzuca paczkę.
+4. **Tag i release na GitHubie:**
+   ```bash
+   git tag -a v1.3.0 -m "v1.3.0 - krótki opis"
+   git push origin v1.3.0
+   gh release create v1.3.0 tabs-swiper-1.3.0.zip --verify-tag --title "v1.3.0 - krótki opis" --notes-file notes.md
+   ```
+   Notatki po angielsku, w układzie poprzednich release'ów (New Features / Improvements / Bug Fixes).
+5. **Chrome Web Store:** [Developer Dashboard](https://chrome.google.com/webstore/devconsole) > Tabs Swiper > Package > Upload new package > wybierz ZIP > Submit for review.
+   - Nowej paczki nie wgrasz, dopóki poprzednia wersja czeka na recenzję (trzeba poczekać albo anulować tamtą recenzję).
+   - Opis w Store listing jest osobno dla każdego języka z `_locales`. Angielski trzymamy w `store/description-en.txt`; po zmianach funkcji zaktualizuj plik i wklej go pod EN.
+   - Recenzja trwa od kilku godzin do kilku dni; po akceptacji Chrome sam aktualizuje rozszerzenie użytkownikom.
 
 ## 📝 License
 
